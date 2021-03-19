@@ -1,0 +1,6 @@
+/.idea
+/.vscode
+/database
+.env
+.git
+/docker-ayax/.env
