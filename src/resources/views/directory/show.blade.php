@@ -1,31 +1,17 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+@extends('app')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-
-<body class="antialiased">
-    <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="{{ asset('img/ayax-logo.svg') }}" alt="ayax">
-        <h2>Как-то так</h2>
-        <p class="lead">Фильтр подтягивает адреса</p>
-    </div>
+@section('content')
     <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="{{ asset('img/ayax-logo.svg') }}" alt="ayax">
+            <h2>{{ __('title.main') }}</h2>
+            <p class="lead">{{ __('title.description') }}</p>
+        </div>
         <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Фильтр</span>
+            <span class="text-muted">{{ __('filter.title') }}</span>
         </h4>
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -55,24 +41,50 @@
         </ul>
         <form class="card p-2">
             <div class="input-group">
-            <input type="text" class="form-control" placeholder="Адрес с сайта DaData.ru">
+            <input type="text" class="form-control" placeholder="{{ __('filter.place') }}">
             <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">Добавить</button>
+                <button type="submit" class="btn btn-secondary">{{ __('filter.add') }}</button>
             </div>
             </div>
         </form>
         </div>
         <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Карта яндекс</h4>
-      <form class="needs-validation" novalidate="">
+    <h4 class="mb-3">{{ __('table.title') }}</h4>
+    <form class="needs-validation" novalidate="">
         <div class="row">
-            <div>Сюда можно вставить яндекс карту</div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{ __('table.region') }}</th>
+                <th scope="col">{{ __('table.district') }}</th>
+                <th scope="col">{{ __('table.locality') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
         </div>
         <hr class="mb-4">
-      </form>
+    </form>
     </div>
-  </div>
-    </div>
-    <script src="./js/app.js" charset="utf-8"></script>
-</body>
-</html>
+@endsection
+

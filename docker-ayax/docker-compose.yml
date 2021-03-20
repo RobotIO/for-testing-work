@@ -22,7 +22,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./nginx/conf.${CURRENT_ENV}:/etc/nginx/conf.d/
       - ${PROJECTS_PATH}:/var/www
@@ -64,3 +64,4 @@ services:
     volumes:
       - ${PROJECTS_PATH}:/var/www
     command: sh -c "npm install && npm run watch-poll"
+    

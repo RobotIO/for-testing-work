@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('address');
+    return view('directory.show');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::post('/welcome', function () {
+    return ['test' => 1];
 });
