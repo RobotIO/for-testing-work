@@ -9,8 +9,14 @@ class Locality extends Model
 {
     use HasFactory;
 
-    public function region ()
+    public function region()
     {
-        
+        return $this->belongsTo(Region::class);
     }
+
+    public function districts()
+    {
+        return $this->hasMany(District::class);
+    }
+    
 }

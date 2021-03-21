@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class District extends Model
 {
     use HasFactory;
+    
+    public function locality()
+    {
+        return $this->belongsToMany(Locality::class);
+    }
 }

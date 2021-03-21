@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DirectoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('directory.show');
-});
+Route::get('/', [DirectoryController::class, 'index']);
 
-Route::post('/welcome', function () {
-    return ['test' => 1];
-});
+Route::post('/filter', [DirectoryController::class, 'searchFilter']);
+// Route::get('/locality/{regionId}/regions', [DirectoryController::class, 'getLocalitiesByRegion']);
+// Route::get('/district/{localityId}/localities', [DirectoryController::class, 'getDistrictsByLocality']);
