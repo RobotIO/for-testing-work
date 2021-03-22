@@ -8,10 +8,11 @@
 
 
 1. Находясь в папке проекта `docker-ajax` запусти команду `docker-compose up -d` - она сбилдит и запустит контейнеры.
-2. Подтянуть зависимости проекта в контейнере `docker exec -i ayax_php sh -c 'exec composer install`
+2. Подтянуть зависимости проекта в контейнере `docker exec -i ayax_php sh -c 'exec composer install'`
 
 ### Накатить 
-1. Находясь в папке проекта `docker-ajax` запусти ./import_db.sh
+1. Переместите дамп `cabinet.sql` в директорию `database/dumps` 
+2. Находясь в папке проекта `docker-ajax` запусти ./import_db.sh
 
 ### Пользуйся 
 1. Сайт доступен по адресу localhost:8080
