@@ -29,9 +29,9 @@
         </ul>
         <form class="card p-2">
             <div class="input-group">
-            <input type="text" class="form-control" placeholder="{{ __('filter.place') }}">
+            <input type="text" class="form-control" id="inputSearchFilter" placeholder="{{ __('filter.place') }}">
             <div class="input-group-append">
-                <button class="btn btn-secondary" id="searchFilter">{{ __('filter.find') }}</button>
+                <button class="btn btn-secondary" id="btnSearchFilter">{{ __('filter.find') }}</button>
             </div>
             </div>
         </form>
